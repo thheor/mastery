@@ -1,0 +1,159 @@
+[
+  {
+    "instruction": "Do you agree or disagree with this sentence?",
+    "question": "Warm air rises",
+    "answer": "Yes"
+  },
+  {
+    "instruction": "Do you agree or disagree with this sentence?",
+    "question": "I talk on the phone a lot",
+    "answer": "No"
+  },
+  {
+    "instruction": "Do you agree or disagree with this sentence?",
+    "question": "I sent an email today",
+    "answer": "Yes"
+  },
+  {
+    "instruction": "Do you agree or disagree with this sentence?",
+    "question": "I'm going to make a phone call today",
+    "answer": "Yes"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Tom is a student. He (study) [blank] every day.",
+    "answer": "studies"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Tom is at his desk. He (study) [blank] right now.",
+    "answer": "is studying"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Tom had some homework to do, so he (study) [blank] last night.",
+    "answer": "studied"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Tom began studying at 7:00 last night. His friends came over around 7:30. Tom was still at his desk when they arrived. In other words, Tom (study) [blank] last night when his friends came over.",
+    "answer": "was studying"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Tom (study) [blank] tomorrow.",
+    "answer": "will study//is going to study"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Tom is going to begin studying at 7:00 tomorrow. His friends are going to come over at 7:30. Tom (study) [blank] when they arrive.",
+    "answer": "will be studying//is going to be studying"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Tom is studying Chapter 2. He (already) [blank] Chapter 1.",
+    "answer": "has already studied"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Last week Tom finished studying Chapter 1. This week he's studying Chapter 2. He (already) [blank] Chapter 1 when he started Chapter 2.",
+    "answer": "had already studied"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Next week Tom will finish Chapter 4 and 5. Before Tom studies Chapter 5, he (already) [blank] Chapter 4.",
+    "answer": "will already have studied"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Today Tom began studying at 8:00. Now it is 10:00. Tom (study) [blank] for two hours.",
+    "answer": "has been studying"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "Yesterday Tom began studying at 8:00. Tom's friends came over at 10:00. Before his friends came, Tom (study) [blank] for two hours.",
+    "answer": "had been studying"
+  },
+  {
+    "instruction": "Complete this sentence with a form of any words in parentheses.",
+    "question": "It's 8:00. Tom's roommate gets home at 10:00. By the time Tom's roommate gets home, Tom (study) [blank] for two hours.",
+    "answer": "will have been studying"
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Does Pedro walks to work every morning?",
+    "answer": "Yes"
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "What you are talking about?"
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Did you finished your work?"
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "My friend doesn't liking her apartment."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Do you are working for this company?"
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "What time your plane did it arrive?"
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "How long have you are living in this city?"
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Ali won't to be in class tomorrow."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "I am not agree with your opinion."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "I'm not knowing Sam's wife."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "My roommate usually watch television, listen to music, or going out in the evening."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "When I turned the key, the car starting."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Air is consisting of oxygen, nitrogen, and other gases."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "The children drawed some pictures in school this morning."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Right now Sally in the kitchen eating breakfast."
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "While I'm driving home last night, I heared a strange noise in the engine."
+  },
+  {
+    "instruction": "Do you agree or disagree with this sentence?",
+    "question": "I read a newspaper every day."
+  },
+  {
+    "instruction": "Do you agree or disagree with this sentence?",
+    "question": "I am sitting next to someone from Asia."
+  },
+  {
+    "instruction": "Do you agree or disagree with this sentence?",
+    "question": "The sun revolves around the earth."
+  }
+]
