@@ -82,78 +82,96 @@
   {
     "instruction": "Correct the errors in this sentence",
     "question": "Does Pedro walks to work every morning?",
-    "answer": "Yes"
+    "answer": "Does Pedro walk to work every morning?"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "What you are talking about?"
+    "answer": "What are you talking about?"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "Did you finished your work?"
+    "answer": "Did you finish your work?"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "My friend doesn't liking her apartment."
+    "answer": "My friend doesn't like her apartment"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "Do you are working for this company?"
+    "answer": "Are you working for this company?//Do you work for this company?"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "What time your plane did it arrive?"
+    "answer": "What time did your plane arrive?"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "How long have you are living in this city?"
+    "answer": "How long have you been living in this city?//How long have you lived in this city?"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "Ali won't to be in class tomorrow."
+    "answer": "Ali won't be in class tomorrow"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "I am not agree with your opinion."
+    "answer": "I don't agree with your opinion"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "I'm not knowing Sam's wife."
+    "answer": "I don't know Sam's wife"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "My roommate usually watch television, listen to music, or going out in the evening."
+    "answer": "My roommate usually watches television, listens to music, or goes out in the evening"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "When I turned the key, the car starting."
+    "answer": "When I turned the key, the car started"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "Air is consisting of oxygen, nitrogen, and other gases."
+    "answer": "Air consists of oxygen, nitrogen, and other gases"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "The children drawed some pictures in school this morning."
+    "answer": "The children drew some pictures in school this morning"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "Right now Sally in the kitchen eating breakfast."
+    "answer": "Right now Sally is in the kitchen eating breakfast"
   },
   {
     "instruction": "Correct the errors in this sentence",
     "question": "While I'm driving home last night, I heared a strange noise in the engine."
+    "answer": "While I was driving home last night, I heard a strange noise in the engine"
   },
   {
     "instruction": "Do you agree or disagree with this sentence?",
     "question": "I read a newspaper every day."
+    "answer": "Yes//No"
   },
   {
     "instruction": "Do you agree or disagree with this sentence?",
     "question": "I am sitting next to someone from Asia."
+    "answer": "Yes//No"
   },
   {
     "instruction": "Do you agree or disagree with this sentence?",
     "question": "The sun revolves around the earth."
+    "answer": "No"
   }
 ]
