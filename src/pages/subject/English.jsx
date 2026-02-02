@@ -6,7 +6,7 @@ import reactStringReplace from "react-string-replace";
 
 export function English({user}) {
   const [questionIndex, setQuestionIndex] = useState(() => {
-    const index = Math.floor(Math.random() * 17); 
+    const index = Math.floor(Math.random() * data.length); 
     return index;
   });
   const [instruction, setInstruction] = useState(() => {
@@ -53,8 +53,8 @@ export function English({user}) {
   }
   
   function setUp(){
-    let index = Math.floor(Math.random() * 17);
-    setQuestionIndex(prev => prev === index ? Math.floor(Math.random() * 17) : index);
+    let index = Math.floor(Math.random() * data.length);
+    setQuestionIndex(prev => prev === index ? Math.floor(Math.random() * data.length) : index);
     setQuestion(data[questionIndex].question)
     setInstruction(data[questionIndex].instruction);
     setAnswerKey(data[questionIndex].answer);
