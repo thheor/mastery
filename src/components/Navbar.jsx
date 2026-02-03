@@ -9,7 +9,7 @@ export function Navbar({name}) {
   return(
     <nav className={`fixed min-w-screen transition-transform transform duration-300 bg-ctp-base border-ctp-lavender text-ctp-text`}>
       <button type="button" onClick={(e) => setIsOpen(!isOpen)} className="absolute right-10 top-3">
-        <Icon name="Bars3Icon" className="hidden bg-auto size-8 p-1/2 rounded cursor-pointer max-sm:block  hover:bg-ctp-lavender hover:text-ctp-base transition duration-200 ease-in-out"/>
+        <Icon name="Bars3Icon" className={`${isOpen ? 'bg-ctp-lavender text-ctp-base' : ''} hidden bg-auto size-8 p-1/2 rounded cursor-pointer max-sm:block hover:bg-ctp-lavender hover:text-ctp-base transition duration-200 ease-in-out`}/>
       </button>
       <div className={`${isOpen ? 'block mt-8' : ''} ${isMobile && isOpen == false ? 'hidden' : ''}`}>
         <ul className={`${isMobile ? 'block text-center' : 'flex flex-wrap justify-center items-center gap-10'}  max-w-screen p-3 text-base font-medium font-poppins`}>
