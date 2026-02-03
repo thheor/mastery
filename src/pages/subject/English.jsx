@@ -3,6 +3,7 @@ import data from "../../data/english.json";
 import { CreateQuestion } from '../../components/CreateQuestion.jsx';
 import { InputField } from '../../components/InputField.jsx';
 import reactStringReplace from "react-string-replace";
+import { useFloatingPanel } from "../../hooks/utils.js";
 
 export function English({user}) {
   const [questionIndex, setQuestionIndex] = useState(() => {
@@ -18,29 +19,44 @@ export function English({user}) {
   const [answerKey, setAnswerKey] = useState(() => {
     return data[questionIndex].answer;
   })
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(0);
   const [answer, setAnswer] = useState('');
   const [correct, setCorrect] = useState(0);
   const [incorrect, setIncorrect] = useState(0);
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const panelRef = useRef();
+
+  useFloatingPanel(panelRef, () => setIsPanelOpen(false));
 
   useEffect(() => {
-    setUp();
+    if(!isPanelOpen){
+      setUp();
+      nextQuestion();
+    }
     
-  }, [])
+  }, [isPanelOpen])
 
-  function nextQuestion(e){
-    e.preventDefault();
+  function nextQuestion(){
     setNumber(prev => prev + 1);
-    setUp();
   }
 
   function checkAnswer(){
-    let key = answerKey?.split("//");
+    let key = answerKey.toLowerCase();
+    key = key.split("//");
+    const ans = answer.trim().toLowerCase();
 
-    if(answer === key[0] || answer === key[1]){
+    if(ans === key[0] || ans === key[1]){
       setCorrect(prev => prev + 1);
+      //const handleDB = async () => {
+        //const { error } = await supabase.from('user').update({correct: correct});
+      //}
+      setIsCorrect(true);
     } else {
+      let key = answerKey.split('//');
+      //alert(`The correct answer is "${key[0]}"`);
       setIncorrect(prev => prev + 1);
+      setIsCorrect(false);
     }
 
   }
@@ -48,7 +64,7 @@ export function English({user}) {
   function handleSubmit(e){
     e.preventDefault();
     checkAnswer();
-    nextQuestion(e);
+    setIsPanelOpen(true);
     setAnswer('');
   }
   
@@ -79,6 +95,19 @@ export function English({user}) {
       <CreateQuestion question={question} keyword="[blank]" handleSubmit={handleSubmit} setAnswer={setAnswer} answer={answer} />
       <InputField instruction={instruction} setAnswer={setAnswer} answer={answer} handleSubmit={handleSubmit} />
     </div>
+    {isPanelOpen && 
+    <div ref={panelRef} className="fixed top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] ">
+      <div className="bg-ctp-lavender w-100 min-h-30 rounded-xl border-2 border-ctp-crust">
+        <p className={`text-center text-2xl ${isCorrect ? 'text-green-600' : 'text-red-500'} font-poppins font-semibold text-ctp-crust mt-2`}>
+          {isCorrect ? 'Correct' : 'Wrong'}
+        </p>
+        <p className="text-center text-lg font-poppins font-normal  text-ctp-crust ">The Correct Answer is</p>
+        <p className="text-center px-8 pb-4 text-center text-2xl font-poppins font-medium text-ctp-crust ">{answerKey}</p>
+      </div>
+      <div className="flex justify-center">
+        <p className="bg-ctp-lavender mt-2 rounded-xl border-2 border-ctp-crust px-2 text-sm font-poppins text-center font-normal  text-ctp-crust ">Click everywhere to continue...</p>
+      </div>
+    </div>}
   </div>
   );
 }
