@@ -173,5 +173,85 @@
     "instruction": "Do you agree or disagree with this sentence?",
     "question": "The sun revolves around the earth.",
     "answer": "No"
-  }
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Kristin wash her hair every other day or so.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Tony sit usually in the front row during class, but today he sit in the las row.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Please be quit, I try to concentrate.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "You lock always the door to your apartment when you leave?",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "I wrote to my friend las week. She hasn't answered my letter yet. I wait still for a reply.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "After six days of rain, I'm glad that the sun shine today",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Every morning, the sun shine in my bedroom window and wake me up.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "The chef is in his kitchen right now. He cook",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "He taste some soup",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "It taste too salty",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "He don't like it",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Ask Ahmed for your notebook. He have it.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Your notebook is over there. Ahmed hold it.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Look at Olga. She's smiling and dancing. She have a good time.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Relax. You don't have to tell me any more about it. I bealive you.",
+    "answer": ""
+  },
+  {
+    "instruction": "Correct the errors in this sentence",
+    "question": "Dinosaurs became extinct a long time ago. They dont exist anymore.",
+    "answer": ""
+  },
 ]
