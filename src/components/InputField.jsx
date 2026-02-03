@@ -1,5 +1,6 @@
 
 export function InputField({handleSubmit, instruction, setAnswer, answer}){
+
   const agreement = instruction.match('agree or disagree');
   if(agreement){
     return (
