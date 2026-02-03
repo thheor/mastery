@@ -1,9 +1,12 @@
+import { English } from './subject/English.jsx'
+import { Card } from '../components/Card.jsx'
 
 export function CourseList({user}) {
-
+  
   return(
-    <div className="flex justify-center items-center bg-ctp-green min-h-screen w-screen">
-      <p>Course List</p>
-    </div>
+    <section id="link" className="min-h-screen bg-ctp-base flex flex-col gap-5 justify-center items-center">
+      <Card link={'practice/english'} title="English" description="Learn english grammar" />
+      <Card link={'practice/math'} title="Math" description="Learn math " />
+    </section>
   );
 }
