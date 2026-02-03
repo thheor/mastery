@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { English } from './subject/English.jsx'
 import { Card } from '../components/Card.jsx'
 
 export function Practice({user}) {
-  const [current, setCurrent] = useState(0);
   
   return(
     <section id="link" className="min-h-screen bg-ctp-base flex flex-col gap-5 justify-center items-center">
