@@ -92,7 +92,7 @@ export function Pomodoro({user}) {
       }
         </div>
     <TimerDisplay time={elapsetime}
-    className="text-[300px] text-ctp-blue font-roboto-flex font-bold -mt-20" />
+    className="text-[300px] text-ctp-text font-roboto-flex font-bold -mt-20" />
     <div className="flex flex-row justify-between items-center gap-5 -mt-20">
       {isRunning ?
           <>
