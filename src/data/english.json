@@ -42,12 +42,12 @@
   {
     "instruction": "Complete this sentence with a form of any words in parentheses.",
     "question": "Tom (study) [blank] tomorrow.",
-    "answer": "will study//is going to study"
+    "answer": "will study _ is going to study"
   },
   {
     "instruction": "Complete this sentence with a form of any words in parentheses.",
     "question": "Tom is going to begin studying at 7:00 tomorrow. His friends are going to come over at 7:30. Tom (study) [blank] when they arrive.",
-    "answer": "will be studying//is going to be studying"
+    "answer": "will be studying _ is going to be studying"
   },
   {
     "instruction": "Complete this sentence with a form of any words in parentheses.",
@@ -102,7 +102,7 @@
   {
     "instruction": "Correct the errors in this sentence",
     "question": "Do you are working for this company?",
-    "answer": "Are you working for this company?//Do you work for this company?"
+    "answer": "Are you working for this company?_ Do you work for this company?"
   },
   {
     "instruction": "Correct the errors in this sentence",
@@ -112,7 +112,7 @@
   {
     "instruction": "Correct the errors in this sentence",
     "question": "How long have you are living in this city?",
-    "answer": "How long have you been living in this city?//How long have you lived in this city?"
+    "answer": "How long have you been living in this city?_ How long have you lived in this city?"
   },
   {
     "instruction": "Correct the errors in this sentence",
@@ -162,12 +162,12 @@
   {
     "instruction": "Do you agree or disagree with this sentence?",
     "question": "I read a newspaper every day.",
-    "answer": "Yes//No"
+    "answer": "Yes _ No"
   },
   {
     "instruction": "Do you agree or disagree with this sentence?",
     "question": "I am sitting next to someone from Asia.",
-    "answer": "Yes//No"
+    "answer": "Yes _ No"
   },
   {
     "instruction": "Do you agree or disagree with this sentence?",
