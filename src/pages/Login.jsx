@@ -37,7 +37,7 @@ export function Login({ setUser, setName, setCorrect, setIncorrect }) {
     setCorrect(correct);
     setIncorrect(incorrect);
 
-    navigate('/home');
+    navigate('/');
 
   }
 

@@ -4,6 +4,7 @@ import { Settings } from './settings/Settings.jsx';
 import { Tasks } from './tasks/Tasks.jsx'
 import { TimerDisplay } from '../components/TimerDisplay.jsx';
 import { Icon } from '../components/Icon.jsx';
+import { ToLogin } from '../components/ToLogin.jsx';
 
 export function Pomodoro({user}) {
   const [data, setData] = useState({
@@ -79,15 +80,15 @@ export function Pomodoro({user}) {
 
   return(
   <div className="min-h-screen bg-ctp-base font-roboto-flex flex flex-col justify-center items-center overflow-x-hidden">
-      <div className="flex flex-row items-center justify-between mt-20 px-1 pr-2 border border-ctp-lavender rounded-xl">
+      <div className="flex flex-row items-center justify-between mt-20 px-1 pr-2 border border-ctp-blue rounded-xl">
       {isFocus ? 
         <>
         <Icon type="outline" name="AcademicCapIcon"
-        className="size-10 p-1 text-ctp-lavender"/><p className="text-xl text-ctp-lavender font-roboto-flex font-medium">Focus</p>
+        className="size-10 p-1 text-ctp-blue"/><p className="text-xl text-ctp-blue font-roboto-flex font-medium">Focus</p>
         </> :
         <>
         <Icon type="outline" name="RocketLaunchIcon"
-        className="size-10 p-1.5 text-ctp-lavender"/><p className="text-xl text-ctp-lavender font-roboto-flex font-medium">Break</p>
+        className="size-10 p-1.5 text-ctp-blue"/><p className="text-xl text-ctp-blue font-roboto-flex font-medium">Break</p>
         </>
       }
         </div>
@@ -121,7 +122,10 @@ export function Pomodoro({user}) {
       }
       <Settings isSetting={isSetting} data={data} updateData={updateData} closeSetting={handleCloseSetting} />
     </div>
-    <Tasks user={user} />
+    {!user && 
+      <h1 className="p-1 w-70 md:w-100 max-sm:mt-5 border-b border-ctp-text text-ctp-text text-xl md:text-2xl font-poppins">Tasks</h1>}
+    <ToLogin title="Login to add tasks" className="flex flex-col justify-center items-center mt-5" />
+    {user && <Tasks user={user} />}
   </div>
   );
 }

@@ -19,16 +19,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      {user && <Navbar user={user} name={name} />}
+      <Navbar name={name} />
       <Routes>
-        <Route path="/" element={<Login setUser={setUser} setName={setName} setCorrect={setCorrect} setIncorrect={setIncorrect} />} />
-        <Route path="/profile" element={<ProtectedRoute user={user} ><Profile user={user} name={name} correct={correct} incorrect={incorrect}  /></ProtectedRoute>} />} />
-        <Route path="/home" element={<ProtectedRoute user={user} ><Dashboard user={user} /></ProtectedRoute>} />} />
-        <Route path="/course" element={<ProtectedRoute user={user} ><CourseList user={user} /></ProtectedRoute>} />} />
-        <Route path="/practice" element={<ProtectedRoute user={user} ><Practice user={user} /></ProtectedRoute>} />} />
-        <Route path="/pomodoro" element={<ProtectedRoute user={user} ><Pomodoro user={user} /></ProtectedRoute>} />} />
-        <Route path="/practice/english" element={<ProtectedRoute user={user} ><English user={user} /></ProtectedRoute>} />} />
-        <Route path="/practice/math" element={<ProtectedRoute user={user} ><Math user={user} /></ProtectedRoute>} />} />
+        <Route path="/login" element={<Login setUser={setUser} setName={setName} setCorrect={setCorrect} setIncorrect={setIncorrect} />} />
+        <Route path="/profile" element={<Profile user={user} name={name} correct={correct} incorrect={incorrect} />} />
+        <Route path="/" element={<Dashboard user={user} /> } />
+        <Route path="/course" element={<CourseList user={user} />} />
+        <Route path="/practice" element={<Practice user={user} />} />
+        <Route path="/pomodoro" element={<Pomodoro user={user} />} />
+        <Route path="/practice/english" element={<English user={user} />} />
+        <Route path="/practice/math" element={<Math user={user} />} />
       </Routes>
     </BrowserRouter>
     
