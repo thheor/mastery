@@ -124,7 +124,7 @@ export function Pomodoro({user}) {
     </div>
     {!user && 
       <h1 className="p-1 w-70 md:w-100 max-sm:mt-5 border-b border-ctp-text text-ctp-text text-xl md:text-2xl font-poppins">Tasks</h1>}
-    <ToLogin title="Login to add tasks" className="flex flex-col justify-center items-center mt-5" />
+    <ToLogin title="Login to add tasks" className="flex flex-col justify-center items-center mt-5 mb-10" />
     {user && <Tasks user={user} />}
   </div>
   );

@@ -12,7 +12,7 @@ export function Navbar({name}) {
         <Icon name="Bars3Icon" className={`${isOpen ? 'bg-ctp-lavender text-ctp-base' : ''} hidden bg-auto size-8 p-1/2 rounded cursor-pointer max-sm:block hover:bg-ctp-lavender hover:text-ctp-base transition duration-200 ease-in-out`}/>
       </button>
       <div className={`${isOpen ? 'block mt-8' : ''} ${isMobile && isOpen == false ? 'hidden' : ''}`}>
-        <ul className={`${isMobile ? 'block text-center' : 'flex flex-wrap justify-center items-center gap-10'}  max-w-screen p-3 text-base font-medium font-poppins`}>
+        <ul className={`${isMobile ? 'block text-center' : 'flex flex-wrap justify-center max-sm:hidden items-center gap-10'}  max-w-screen p-3 text-base font-medium font-poppins`}>
           <li className="">
             <NavLink to="/" className={({isActive}) => isActive ? `${isMobile ? 'after:scale-x-50' : 'after:scale-x-100' } text-ctp-green  after:block after:content-[""] after:border-b after:transition` :
               `${isMobile ? 'hover:after:scale-x-50' : 'hover:after:scale-x-100'} after:block after:content-[""] after:border-b after:scale-x-0 after:transition hover:text-ctp-green transition duration-100 ease-in-out rounded`}>
@@ -41,7 +41,7 @@ export function Navbar({name}) {
         </ul>
         <NavLink to="/profile" className={`${isOpen ? 'block' : ''} ${isMobile && isOpen == false ? 'hidden' : ''} fixed flex gap-3 top-3 right-15`}>
           <p className={`${isMobile ? 'hidden' : ''} font-poppins font-medium`}>{name}</p>
-          <Icon name="UserIcon" className={`${isMobile ? 'hidden size-6' : 'size-6'}`} />
+          <Icon name="UserIcon" className={`${isMobile ? 'hidden size-6' : 'size-6 max-sm:hidden'}`} />
         </NavLink>
       </div>
     </nav>
