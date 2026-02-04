@@ -93,7 +93,7 @@ export function Pomodoro({user}) {
       }
         </div>
     <TimerDisplay time={elapsetime}
-    className="text-[300px] text-ctp-text font-roboto-flex font-bold -mt-20" />
+    className="text-[250px] md:text-[300px] text-ctp-text font-roboto-flex font-bold -mt-20" />
     <div className="flex flex-row justify-between items-center gap-5 -mt-20">
       {isRunning ?
           <>
@@ -123,8 +123,10 @@ export function Pomodoro({user}) {
       <Settings isSetting={isSetting} data={data} updateData={updateData} closeSetting={handleCloseSetting} />
     </div>
     {!user && 
-      <h1 className="p-1 w-70 md:w-100 max-sm:mt-5 border-b border-ctp-text text-ctp-text text-xl md:text-2xl font-poppins">Tasks</h1>}
-    <ToLogin title="Login to add tasks" className="flex flex-col justify-center items-center mt-5 mb-10" />
+      <>
+        <h1 className="p-1 w-70 md:w-100 mt-5 border-b border-ctp-text text-ctp-text text-xl md:text-2xl font-poppins">Tasks</h1>
+        <ToLogin title="Login to add tasks" className="flex flex-col justify-center items-center mt-5 mb-10" />
+      </>}
     {user && <Tasks user={user} />}
   </div>
   );
