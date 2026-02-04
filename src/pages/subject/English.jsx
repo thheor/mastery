@@ -81,11 +81,11 @@ export function English({user}) {
     <h1 className="mt-30 text-4xl font-semibold">English Grammar</h1>
       <div className="flex gap-5 mt-5">
         <div className="flex flex-col items-center ">
-          <div className="flex justify-center items-center bg-ctp-blue text-ctp-base font-semibold rounded-xl w-20 h-20 text-5xl">{correct}</div>
+          <div className="flex justify-center items-center bg-ctp-blue text-ctp-base font-semibold rounded-xl w-18 md:w-20 h-18 md:h-20 text-5xl">{correct}</div>
           <p className="text-xl font-semibold ">correct</p>
         </div>
         <div className="flex flex-col items-center ">
-          <div className="flex justify-center items-center bg-ctp-blue text-ctp-base font-semibold rounded-xl w-20 h-20 text-5xl">{incorrect}</div>
+          <div className="flex justify-center items-center bg-ctp-blue text-ctp-base font-semibold rounded-xl w-18 md:w-20 h-18 md:h-20 text-5xl">{incorrect}</div>
           <p className="text-xl font-semibold ">incorrect</p>
         </div>
       </div>
@@ -97,12 +97,13 @@ export function English({user}) {
     </div>
     {isPanelOpen && 
     <div ref={panelRef} className="fixed top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] ">
-      <div className="bg-ctp-lavender w-100 min-h-30 rounded-xl border-2 border-ctp-crust">
+      <div className="bg-ctp-lavender w-60 md:w-100 min-h-30 rounded-xl border-2 border-ctp-crust">
         <p className={`text-center text-2xl ${isCorrect ? 'text-green-600' : 'text-red-500'} font-poppins font-semibold text-ctp-crust mt-2`}>
           {isCorrect ? 'Correct' : 'Wrong'}
         </p>
-        <p className="text-center text-lg font-poppins font-normal  text-ctp-crust ">The Correct Answer is</p>
-        <p className="text-center px-8 pb-4 text-center text-2xl font-poppins font-medium text-ctp-crust ">{answerKey}</p>
+        <p className="text-start px-2 text-base md:text-lg font-poppins font-normal  text-ctp-crust ">The Correct Answer is</p>
+        <p className="text-start px-2 md:px-8 pb-4 text-center text-xl md:text-2xl font-poppins font-medium text-ctp-crust ">{answerKey.replace("//", " OR ")
+        }</p>
       </div>
       <div className="flex justify-center">
         <p className="bg-ctp-lavender mt-2 rounded-xl border-2 border-ctp-crust px-2 text-sm font-poppins text-center font-normal  text-ctp-crust ">Click everywhere to continue...</p>

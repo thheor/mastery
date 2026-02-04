@@ -15,11 +15,12 @@ export function InputField({handleSubmit, instruction, setAnswer, answer}){
   if(correctSentence){
     return(
       <div className="mt-10">
-        <h1 className="text-ctp-text font-semibold text-2xl">Write the correct sentence:</h1>
+        <h1 className="text-ctp-text font-semibold text-xl">Write the correct sentence:</h1>
         <form onSubmit={handleSubmit} className="">
-          <input type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Type your answer" className="bg-ctp-text text-ctp-base mt-2 p-2 w-80 focus:outline-none rounded" />
+          <input type="text" name="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Type your answer" 
+            className="bg-ctp-text text-ctp-base mt-2 text-base md:text-xl p-1 md:p-2 w-60 md:w-80 focus:outline-none rounded" />
           <button type="submit" onClick={handleSubmit} 
-            className="bg-ctp-lavender ml-5 text-ctp-base p-2 cursor-pointer rounded outline-none">Check</button>
+            className="bg-ctp-lavender ml-2 md:ml-5 text-ctp-base text-sm md:text-base p-2 md:p-2 cursor-pointer rounded outline-none">Check</button>
         </form>
       </div>
     )

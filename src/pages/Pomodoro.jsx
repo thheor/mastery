@@ -78,7 +78,7 @@ export function Pomodoro({user}) {
   }
 
   return(
-  <div className="min-h-screen bg-ctp-base font-roboto-flex flex flex-col justify-center items-center">
+  <div className="min-h-screen bg-ctp-base font-roboto-flex flex flex-col justify-center items-center overflow-x-hidden">
       <div className="flex flex-row items-center justify-between mt-20 px-1 pr-2 border border-ctp-lavender rounded-xl">
       {isFocus ? 
         <>
@@ -97,25 +97,25 @@ export function Pomodoro({user}) {
       {isRunning ?
           <>
           <button type="button" onClick={reset} className="flex justify-center items-center bg-ctp-blue transition duration-200 ease-in-out cursor-pointer hover:bg-ctp-green rounded-xl">
-          <Icon type="solid" name="ArrowPathIcon" className="size-20 p-3 text-ctp-crust" />  
+          <Icon type="solid" name="ArrowPathIcon" className="size-15 md:size-20 p-3 md:p-3 text-ctp-crust" />
           </button>
           <button type="button" onClick={toggle} className="flex justify-center items-center bg-ctp-blue text-ctp-crust transition duration-200 ease-in-out cursor-pointer hover:bg-ctp-green rounded-xl">
-          <Icon type="solid" name="PauseIcon" className="size-20 p-3 text-ctp-crust" />
+          <Icon type="solid" name="PauseIcon" className="size-15 md:size-20 p-2 md:p-3 text-ctp-crust" />
           </button>
           <button type="button" onClick={forward} className="flex justify-center items-center bg-ctp-blue text-ctp-crust transition duration-200 ease-in-out cursor-pointer hover:bg-ctp-green rounded-xl">
-          <Icon type="solid" name="ForwardIcon" className="size-20 p-3 text-ctp-crust" />
+          <Icon type="solid" name="ForwardIcon" className="size-15 md:size-20 p-2 md:p-3 text-ctp-crust" />
           </button>
           </>
         :
           <>
           <button type="button" onClick={setting} className="flex justify-center items-center bg-ctp-blue text-ctp-crust transition duration-200 ease-in-out cursor-pointer hover:bg-ctp-green rounded-xl">
-          <Icon type="solid" name="EllipsisHorizontalIcon" className="size-20 p-3 text-ctp-crust" />
+          <Icon type="solid" name="EllipsisHorizontalIcon" className="size-15 md:size-20 p-1 md:p-3 text-ctp-crust" />
           </button>
           <button type="button" onClick={toggle} className="flex justify-center items-center bg-ctp-blue text-ctp-crust transition duration-200 ease-in-out cursor-pointer hover:bg-ctp-green rounded-xl">
-          <Icon type="solid" name="PlayIcon" className="size-20 p-3 text-ctp-crust" />
+          <Icon type="solid" name="PlayIcon" className="size-15 md:size-20 p-2 md:p-3 text-ctp-crust" />
           </button>
           <button type="button" onClick={forward} className="flex justify-center items-center bg-ctp-blue text-ctp-crust transition duration-200 ease-in-out cursor-pointer hover:bg-ctp-green rounded-xl">
-          <Icon type="solid" name="ForwardIcon" className="size-20 p-3 text-ctp-crust" />
+          <Icon type="solid" name="ForwardIcon" className="size-15 md:size-20 p-2 md:p-3 text-ctp-crust" />
           </button>
           </>
       }

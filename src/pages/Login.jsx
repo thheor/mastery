@@ -44,7 +44,7 @@ export function Login({ setUser, setName, setCorrect, setIncorrect }) {
   return(
     <div className="min-h-screen w-screen flex flex-col justify-center items-center bg-ctp-base ">
       <h1 className="text-4xl font-bold text-ctp-blue -mt-40">Login Sek</h1>
-      <form onSubmit={getData} className="flex flex-col gap-5 w-80 mt-10 text-poppins ">
+      <form onSubmit={getData} className="flex flex-col gap-5 w-70 md:w-80 mt-10 text-poppins ">
           <label htmlFor="name" className="text-ctp-text font-medium text-xl">Name</label>
           <input type="text" name="name" placeholder="Your name" onChange={(e) => setLoginName(e.target.value)}
           className="-mt-3 text-xl bg-ctp-text text-ctp-base py-2 pl-2 focus:outline-none placeholder:text-base  rounded" />

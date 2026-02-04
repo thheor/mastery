@@ -10,8 +10,8 @@ export function TimerDisplay({time, className = ""}) {
   if(window.innerWidth <= 600){
     return(
     <div className="flex flex-col">
-      <p className={className}>{minutes}</p>
-      <p className={className}>{second}</p>
+      <p className="text-[250px] text-ctp-blue font-roboto-flex font-bold -mt-15">{minutes}</p>
+      <p className="text-[250px] text-ctp-blue font-roboto-flex font-bold -mt-40">{second}</p>
     </div>
     );
   }
