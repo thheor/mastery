@@ -7,7 +7,7 @@ export function TimerDisplay({time, className = ""}) {
   minutes = String(minutes).padStart(2, "0");
   second = String(second).padStart(2, "0");
 
-  if(window.innerWidth <= 600){
+  if(window.innerWidth <= 700){
     return(
     <div className="flex flex-col">
       <p className="text-[250px] text-ctp-text font-roboto-flex font-bold -mt-15">{minutes}</p>
