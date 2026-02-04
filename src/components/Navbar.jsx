@@ -14,7 +14,7 @@ export function Navbar({name}) {
       <div className={`${isOpen ? 'block mt-8' : ''} ${isMobile && isOpen == false ? 'hidden' : ''}`}>
         <ul className={`${isMobile ? 'block text-center' : 'flex flex-wrap justify-center items-center gap-10'}  max-w-screen p-3 text-base font-medium font-poppins`}>
           <li className="">
-            <NavLink to="/home" className={({isActive}) => isActive ? `${isMobile ? 'after:scale-x-50' : 'after:scale-x-100' } text-ctp-green  after:block after:content-[""] after:border-b after:transition` :
+            <NavLink to="/" className={({isActive}) => isActive ? `${isMobile ? 'after:scale-x-50' : 'after:scale-x-100' } text-ctp-green  after:block after:content-[""] after:border-b after:transition` :
               `${isMobile ? 'hover:after:scale-x-50' : 'hover:after:scale-x-100'} after:block after:content-[""] after:border-b after:scale-x-0 after:transition hover:text-ctp-green transition duration-100 ease-in-out rounded`}>
               Home</NavLink> 
           </li>
