@@ -14,15 +14,13 @@ import { Navbar } from './components/Navbar.jsx'
 function App() {
   const [user, setUser] = useState(null);
   const [name, setName] = useState(null);
-  const [correct, setCorrect] = useState(null);
-  const [incorrect, setIncorrect] = useState(null);
 
   return (
     <BrowserRouter>
       <Navbar name={name} />
       <Routes>
-        <Route path="/login" element={<Login setUser={setUser} setName={setName} setCorrect={setCorrect} setIncorrect={setIncorrect} />} />
-        <Route path="/profile" element={<Profile user={user} name={name} correct={correct} incorrect={incorrect} />} />
+        <Route path="/login" element={<Login setUser={setUser} setName={setName} />} />
+        <Route path="/profile" element={<Profile user={user} name={name} />} />
         <Route path="/" element={<Dashboard user={user} /> } />
         <Route path="/course" element={<CourseList user={user} />} />
         <Route path="/practice" element={<Practice user={user} />} />

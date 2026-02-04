@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient.js';
 import { useNavigate } from 'react-router-dom';
 
-export function Login({ setUser, setName, setCorrect, setIncorrect }) {
+export function Login({ setUser, setName }) {
   const [isLoading, setIsLoading] = useState(false);
   const [loginName, setLoginName] = useState('');
   const navigate = useNavigate();
@@ -14,12 +14,12 @@ export function Login({ setUser, setName, setCorrect, setIncorrect }) {
     }
 
     setIsLoading(true);
-    const { data, error } = await supabase.from('user').select('*').eq('name', name).single();
+    const { data, error } = await supabase.from('user').select('*').eq('name', loginName).single();
 
     if (data){
       console.log(data)
     } else {
-      const { data, error } = await supabase.from('user').insert({name: name}).select().single();
+      const { data, error } = await supabase.from('user').insert({name: loginName}).select().single();
       console.log(data)
       if(error){
         return console.log(error);
@@ -29,13 +29,9 @@ export function Login({ setUser, setName, setCorrect, setIncorrect }) {
     }
 
     let userId = data.id;
-    let correct = data.correct;
-    let incorrect = data.incorrect;
 
     setUser(userId);
     setName(loginName);
-    setCorrect(correct);
-    setIncorrect(incorrect);
 
     navigate('/');
 
