@@ -4,7 +4,7 @@ export function InputField({handleSubmit, instruction, setAnswer, answer}){
   const agreement = instruction.match('agree or disagree');
   if(agreement){
     return (
-      <form onSubmit={handleSubmit} className="absolute bottom-80 flex gap-5 mt-10">
+      <form onSubmit={handleSubmit} className=" flex gap-5 mt-10">
           <button type="submit" onClick={() => setAnswer("Yes")} className="text-ctp-base text-xl font-semibold bg-ctp-blue px-6 py-2 cursor-pointer rounded">Yes</button>
           <button type="submit" onClick={() => setAnswer("No")} className="text-ctp-base text-xl font-semibold bg-ctp-blue px-6 py-2 cursor-pointer rounded">No</button>
         </form>
