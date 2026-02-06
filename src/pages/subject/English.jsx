@@ -50,20 +50,24 @@ export function English({user}) {
     let key = normalization(answerKey);
     key = key.split("_");
     const ans = normalization(answer);
-    // not using (.) or any tanda baca in the end of the line
-    // typo max 1 per word
 
     if(ans === key[0] || ans === key[1]){
       setCorrect(prev => prev + 1);
-      const handleDB = async (user) => {
+      const addCorrect = async (user) => {
         const { error } = await supabase.rpc('addcorrect', {user_id: user});
         if(error) console.log(error)
       }
-      console.log(user)
-      handleDB(user);
+      
+      if(user) addCorrect(user);
       setIsCorrect(true);
     } else {
       setIncorrect(prev => prev + 1);
+      const addIncorrect = async (user) => {
+        const { error } = await supabase.rpc('addincorrect', {user_id: user});
+        if(error) console.log(error)
+      }
+
+      if(user) addIncorrect(user);
       setIsCorrect(false);
     }
 
@@ -92,7 +96,8 @@ export function English({user}) {
     <h1 className="mt-30 text-4xl font-semibold">English Grammar</h1>
       <div className="flex gap-5 mt-5">
         <div className="flex flex-col items-center ">
-          <div className="flex justify-center items-center bg-ctp-blue text-ctp-base font-semibold rounded-xl w-18 md:w-20 h-18 md:h-20 text-5xl">{correct}</div>
+          <div className="flex justify-center items-center bg-ctp-blue text-ctp-base 
+            font-semibold rounded-xl w-18 md:w-20 h-18 md:h-20 text-5xl">{correct}</div>
           <p className="text-xl font-semibold ">correct</p>
         </div>
         <div className="flex flex-col items-center ">
