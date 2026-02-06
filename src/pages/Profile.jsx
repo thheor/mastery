@@ -8,7 +8,9 @@ export function Profile({user, name}) {
   const [incorrect, setIncorrect] = useState('loading');
 
   useEffect(() => {
-    getCorrect(user);
+    if(user){
+      getCorrect(user);
+    }
 
   }, [])
 
@@ -28,7 +30,7 @@ export function Profile({user, name}) {
     {user && <div className="min-h-screen flex flex-col items-center bg-ctp-base">
       <div className="mt-20">
         <Icon name="UserIcon" className="size-20 mx-auto text-ctp-text" />
-          <table className="text-2xl w-100 text-ctp-text mt-10">
+          <table className="text-lg sm:text-2xl w-40 sm:w-60 text-ctp-text mt-10">
             <tbody>
             <tr>
               <td className="w-40">Name</td>
