@@ -4,7 +4,7 @@ import { ProtectedRoute } from './components/ProtectedRoute.jsx'
 import { Login } from './pages/Login.jsx'
 import { Profile } from './pages/Profile.jsx'
 import { Dashboard } from './pages/Dashboard.jsx'
-import { CourseList } from './pages/CourseList.jsx'
+import { CardList } from './pages/CardList.jsx'
 import { Practice } from './pages/Practice.jsx'
 import { English } from './pages/subject/English.jsx'
 import { Math } from './pages/subject/Math.jsx'
@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" element={<Login setUser={setUser} setName={setName} />} />
         <Route path="/profile" element={<Profile user={user} name={name} />} />
         <Route path="/" element={<Dashboard user={user} /> } />
-        <Route path="/course" element={<CourseList user={user} />} />
+        <Route path="/flashcards" element={<CardList user={user} />} />
         <Route path="/practice" element={<Practice user={user} />} />
         <Route path="/pomodoro" element={<Pomodoro user={user} />} />
         <Route path="/practice/english" element={<English user={user} />} />
