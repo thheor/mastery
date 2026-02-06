@@ -22,7 +22,7 @@ export function Dashboard({ user }) {
       </a>
       </div>
       <section id="link" className="min-h-screen bg-ctp-base flex flex-col gap-5 justify-center items-center">
-        <Card link={'course'} title={'UTBK Course'} description={'This course covers all you need to know to answer all UTBK\'s questions correctly.'} />
+        <Card link={'card'} title={'Flashcards'} description={'This course covers the basic of knowledge'} />
         <Card link={'practice'} title={'Learn by Practice'} description={'Knowledge is of no value unless you put into practice.'} />
         <Card link={'pomodoro'} title={'Pomodoro'} description={'Start doing now. One page with customizable timer and organize your tasks with todo list.'} />
       </section>
