@@ -19,9 +19,9 @@ export function Navbar({name}) {
               Home</NavLink> 
           </li>
           <li className="">
-            <NavLink to="/course" className={({isActive}) => isActive ? `${isMobile ? 'after:scale-x-50' : 'after:scale-x-100' } text-ctp-green  after:block after:content-[""] after:border-b after:transition` :
+            <NavLink to="/card" className={({isActive}) => isActive ? `${isMobile ? 'after:scale-x-50' : 'after:scale-x-100' } text-ctp-green  after:block after:content-[""] after:border-b after:transition` :
               `${isMobile ? 'hover:after:scale-x-50' : 'hover:after:scale-x-100'} after:block after:content-[""] after:border-b after:scale-x-0 after:transition hover:text-ctp-green transition duration-100 ease-in-out rounded`}>
-              Course</NavLink> 
+              Flashcards</NavLink> 
           </li >
           <li className="">
             <NavLink to="/practice" className={({isActive}) => isActive ? `${isMobile ? 'after:scale-x-50' : 'after:scale-x-100' } text-ctp-green  after:block after:content-[""] after:border-b after:transition` :
