@@ -25,8 +25,8 @@ function App() {
         <Route path="/profile" element={<Profile user={user} name={name} />} />
         <Route path="/" element={<Dashboard user={user} /> } />
         <Route path="/card" element={<CardList user={user} />} />
-        <Route path="/flashcards/create" element={<CreateFlashcards user={user} />} />
-        <Route path="/flashcards" element={<Flashcards user={user} />} />
+        <Route path="/card/create" element={<CreateFlashcards user={user} />} />
+        <Route path="/card/flashcards" element={<Flashcards user={user} />} />
         <Route path="/practice" element={<Practice user={user} />} />
         <Route path="/pomodoro" element={<Pomodoro user={user} />} />
         <Route path="/practice/english" element={<English user={user} />} />
