@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Icon } from "./Icon.jsx";
 import { motion, AnimatePresence } from "motion/react";
 
-export function Flashcard({title, content, index, isImage = false, image, isCard = false}) {
+export function Flashcard({title, content, index, image, isCard = false}) {
   const [isVisible, setIsVisible] = useState(true);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -18,8 +18,8 @@ export function Flashcard({title, content, index, isImage = false, image, isCard
 
   if(window.innerWidth <= 640){
     setIsMobile(true);
-    setMaxX(30);
-    setMaxY(80);
+    setMaxX(10);
+    setMaxY(10);
     setOffsetY(100);
     setOffsetX(100);
   }
@@ -53,21 +53,21 @@ export function Flashcard({title, content, index, isImage = false, image, isCard
 
         style={{zIndex: index}}
 
-        className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${isImage ? '' : 'justify-center'} w-56 sm:w-70 h-88 sm:h-110 bg-ctp-text border border-ctp-base rounded-xl`}>
-      {isImage && 
-        <div className="w-48 sm:w-60 h-40 sm:h-50 mt-5 bg-ctp-blue rounded-xl">
-          <img src={image} alt="" className="object-cover w-48 h-40" />
+        className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${image ? '' : 'justify-center'} w-64 sm:w-84 h-100 sm:h-132 bg-ctp-text border border-ctp-base rounded-xl`}>
+      {image && 
+        <div className="w-55 sm:w-72 h-40 sm:h-50 mt-5 ">
+          <img src={image} alt="" className="object-cover w-55 sm:w-72 h-40 sm:h-50 rounded-xl" />
         </div>}
-      <div className={`flex items-center ${isCard ? 'justify-between' : 'justify-center'} mt-2 w-48 sm:w-60 z-2`}>
+      <div className={`flex items-center ${isCard ? 'justify-between' : 'justify-center'} mt-2 w-60 sm:w-78 z-2`}>
         {isCard && <Icon name="ChevronDoubleRightIcon" className="text-ctp-blue size-6" />}
-        <h1 className="text-ctp-base text-center text-base sm:text-xl font-semibold font-roboto-flex ">{title}</h1>
+        <h1 className="text-ctp-base text-center text-xl sm:text-2xl font-semibold font-roboto-flex ">{title}</h1>
         {isCard && <Icon name="ChevronDoubleLeftIcon" className="text-ctp-blue size-6" />}
       </div>
       {isCard && <div className="mt-1 z-0 border-b w-36 sm:w-45 h-1 border-ctp-blue rounded-xl"></div>}
       {isCard && <div className="flex justify-center -mt-4 w-60 z-1">
         <Icon name="EllipsisHorizontalIcon" className="size-8 bg-ctp-text text-ctp-blue before:block before:bg-ctp-base" />
       </div>}
-      {isCard && <p className="text-ctp-base text-sm sm:text-lg font-normal font-roboto-flex text-center -mt-1 mx-2">{content}</p>}
+      {isCard && <p className="text-ctp-base text-lg sm:text-xl font-normal font-roboto-flex text-center -mt-1 mx-2">{content}</p>}
       </motion.div>}
     </AnimatePresence>
   );
