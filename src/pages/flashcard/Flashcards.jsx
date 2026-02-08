@@ -9,27 +9,32 @@ export function Flashcards() {
   
   const items = [
     {
+      id: 1,
       title: "phytagoras math",
       content: "content content content content content",
       image: "https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
       category: "math",
     },
     {
+      id: 2,
       title: "derivative 2 variables",
       content: "content content content content content",
       category: "math",
     },
     {
+      id: 3,
       title: "derivative 3 variables",
       content: "content content content content content",
       category: "math",
     },
     {
+      id: 4,
       title: "English grammar",
       content: "content content content content content",
       category: "english",
     },
     {
+      id: 5,
       title: "the rule of relative by einsteins",
       content: "content content content content content",
       category: "physics",
@@ -66,40 +71,30 @@ export function Flashcards() {
   );
 }
 
-function ShowCards({items, query, category}){
+function ShowCards({items, query, category = 'all'}){
   const [newList, setNewList] = useState(items);
 
   useEffect(() => {
-    setNewList(filterList(items, query));
+    setNewList(filterList(items, query))
 
-  }, [query]);
-
-  useEffect(() => {
-    handleCategory(items, category);
-
-  }, [category]);
-
-  function handleCategory(items, category){
-    if(category === 'all'){
-      setNewList(items);
-      return;
-    }
-
-    setNewList(items.filter(item => item.category === category));
-  }
+  }, [query, category]);
 
   function filterList(items, query){
     query = query.toLowerCase();
 
-    return items.filter(item => 
-      item.title.split(' ').some(word => 
-        word.toLowerCase().startsWith(query))); 
+    const list = items.filter(item => {
+      let categoryCondition = category === 'all' ? true : item.category === category;
+
+      return item.title.toLowerCase().split(' ').some(word => 
+        word.toLowerCase().startsWith(query)) && categoryCondition;
+    })
+    return list;
   }
 
   return(
     <>
       {newList.map((item, index) => {
-        return <li key={index}><Flashcard title={item.title} content={item.content} index={index} isCard={true} image={item.image} /></li>
+        return <li key={item.id}><Flashcard title={item.title} content={item.content} index={index} isCard={true} image={item.image} /></li>
       })}
     </>);
 }

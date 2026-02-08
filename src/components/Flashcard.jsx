@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Icon } from "./Icon.jsx";
 import { motion, AnimatePresence } from "motion/react";
 
-export function Flashcard({title, content, index, image, isCard = false}) {
+export function Flashcard({title, content, index, image, isCard = false, isShow}) {
   const [isVisible, setIsVisible] = useState(true);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -47,6 +47,7 @@ export function Flashcard({title, content, index, image, isCard = false}) {
 
         if(Math.abs(startYRef.current - endPointY) > maxY || Math.abs(startXRef.current - endPointX) > maxX || Math.abs(info.offset.x) > offsetX || Math.abs(info.offset.y) > offsetY){
           setIsVisible(false)
+            console.log('visible false')
         }
         }} 
         exit={{opacity: 0, display: 'none', scale: 0.5, transition: { duration: 0.2}}}
@@ -56,7 +57,7 @@ export function Flashcard({title, content, index, image, isCard = false}) {
         className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${image ? '' : 'justify-center'} w-64 sm:w-84 h-100 sm:h-132 bg-ctp-text border border-ctp-base rounded-xl`}>
       {image && 
         <div className="w-55 sm:w-72 h-40 sm:h-50 mt-5 ">
-          <img src={image} alt="" className="object-cover w-55 sm:w-72 h-40 sm:h-50 rounded-xl" />
+          <img src={image} alt="image" className="object-cover w-55 sm:w-72 h-40 sm:h-50 rounded-xl" />
         </div>}
       <div className={`flex items-center ${isCard ? 'justify-between' : 'justify-center'} mt-2 w-60 sm:w-78 z-2`}>
         {isCard && <Icon name="ChevronDoubleRightIcon" className="text-ctp-blue size-6" />}
