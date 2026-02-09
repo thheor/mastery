@@ -5,6 +5,7 @@ export function ToLogin({title, className = ""}) {
 
   const gotoLogin = (e) => {
     e.preventDefault();
+
     navigate("/login");
   }
   

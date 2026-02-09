@@ -8,7 +8,7 @@ import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-export function Flashcard({title, content, image, isCard = true, items}) {
+export function Flashcard({title, content, isCard = true, items}) {
 
   return (
     <>
@@ -29,11 +29,11 @@ export function Flashcard({title, content, image, isCard = true, items}) {
         {items.map((item) => {
           return <SwiperSlide className="text-ctp-base">
             <div className={`flex flex-col items-center
-                          ${image ? '' : 'justify-center'} w-64 sm:w-84 h-100 sm:h-132 bg-ctp-text
+                          ${item.image_path ? '' : 'justify-center'} w-64 sm:w-84 h-100 sm:h-132 bg-ctp-text
                             border border-ctp-base rounded-xl`}>
-              {image && 
+              {item.image_path && 
               <div className="w-55 sm:w-72 h-40 sm:h-50 mt-5 ">
-                <img src={image} alt="image" className="object-cover w-55 sm:w-72 h-40 sm:h-50 rounded-xl" />
+                <img src={item.image_path} alt="image" className="object-cover w-55 sm:w-72 h-40 sm:h-50 rounded-xl" />
               </div>}
               <div className={`flex items-center ${isCard ? 'justify-between' : 'justify-center'} mt-2 w-60 sm:w-78 z-2`}>
                 {isCard && <Icon name="ChevronDoubleRightIcon" className="text-ctp-blue size-6" />}
