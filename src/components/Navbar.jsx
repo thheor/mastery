@@ -7,7 +7,7 @@ export function Navbar({name}) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
   
   return(
-    <nav className={`fixed w-screen transition-transform transform duration-300 bg-ctp-base border-ctp-lavender text-ctp-text`}>
+    <nav className={`fixed w-screen transition-transform transform duration-300 bg-ctp-base border-ctp-lavender text-ctp-text z-1000`}>
       <button type="button" onClick={(e) => setIsOpen(!isOpen)} className="absolute right-6 top-3">
         <Icon name="Bars3Icon" className={`${isOpen ? 'bg-ctp-lavender text-ctp-base' : ''} hidden bg-auto size-8 p-1/2 rounded cursor-pointer max-sm:block hover:bg-ctp-lavender hover:text-ctp-base transition duration-200 ease-in-out`}/>
       </button>
