@@ -69,7 +69,7 @@ export function Flashcards() {
         <option value="physics">Physics</option>
       </select>
    </div>
-      <div className="mt-30 sm:mt-20">
+      <div className="ml-15 mt-30 sm:mt-20">
         <Flashcard title="title" content="content" items={items} />
       </div>
   </div>

@@ -19,13 +19,15 @@ export function Flashcard({title, content, image, isCard = true, items}) {
         effect={'cards'}
         cardsEffect={{
           slideShadows: false,
+          perSlideOffest: 2,
+          perSlideRotate: 1,
         }}
         grabCursor={true}
         modules={[EffectCards]}
         className="swiper w-84 flex h-145 rounded-xl"
       >
         {items.map((item) => {
-          return <SwiperSlide id="list-item" className="text-ctp-base">
+          return <SwiperSlide className="text-ctp-base">
             <div className={`flex flex-col items-center
                           ${image ? '' : 'justify-center'} w-64 sm:w-84 h-100 sm:h-132 bg-ctp-text
                             border border-ctp-base rounded-xl`}>
