@@ -1,75 +1,52 @@
-import { useState, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 import { Icon } from "./Icon.jsx";
-import { motion, AnimatePresence } from "motion/react";
+import { EffectCards } from "swiper/modules";
 
-export function Flashcard({title, content, index, image, isCard = false, isShow}) {
-  const [isVisible, setIsVisible] = useState(true);
-  const [startX, setStartX] = useState(0);
-  const [startY, setStartY] = useState(0);
-  const [maxX, setMaxX] = useState(500);
-  const [maxY, setMaxY] = useState(200);
-  const [offsetX, setOffsetX] = useState(1000);
-  const [offsetY, setOffsetY] = useState(1000);
-  const [isMobile, setIsMobile] = useState(false);
-  const startXRef = useRef(0);
-  const startYRef = useRef(0);
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-  useEffect(() => {
+export function Flashcard({title, content, image, isCard = true, items}) {
 
-  if(window.innerWidth <= 640){
-    setIsMobile(true);
-    setMaxX(10);
-    setMaxY(10);
-    setOffsetY(100);
-    setOffsetX(100);
-  }
-
-  }, [])
-
-  return(
-    <AnimatePresence>
-      {isVisible && <motion.div drag 
-
-        onDragStart={(e, info) => {
-        setStartY(info.point.y);
-        setStartX(info.point.x);}} 
-
-        onDragEnd={(e, info) => {
-        if(startXRef.current === 0 && startYRef.current === 0){
-          startXRef.current = startX;
-          startYRef.current = startY;
-        }
-
-        const endPointX = info.point.x;
-        const endPointY = info.point.y;
-          console.log('start:' + startXRef.current + 'end' + endPointX)
-          console.log(info.offset)
-
-        if(Math.abs(startYRef.current - endPointY) > maxY || Math.abs(startXRef.current - endPointX) > maxX || Math.abs(info.offset.x) > offsetX || Math.abs(info.offset.y) > offsetY){
-          setIsVisible(false)
-            console.log('visible false')
-        }
-        }} 
-        exit={{opacity: 0, display: 'none', scale: 0.5, transition: { duration: 0.2}}}
-
-        style={{zIndex: index}}
-
-        className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${image ? '' : 'justify-center'} w-64 sm:w-84 h-100 sm:h-132 bg-ctp-text border border-ctp-base rounded-xl`}>
-      {image && 
-        <div className="w-55 sm:w-72 h-40 sm:h-50 mt-5 ">
-          <img src={image} alt="image" className="object-cover w-55 sm:w-72 h-40 sm:h-50 rounded-xl" />
-        </div>}
-      <div className={`flex items-center ${isCard ? 'justify-between' : 'justify-center'} mt-2 w-60 sm:w-78 z-2`}>
-        {isCard && <Icon name="ChevronDoubleRightIcon" className="text-ctp-blue size-6" />}
-        <h1 className="text-ctp-base text-center text-xl sm:text-2xl font-semibold font-roboto-flex ">{title}</h1>
-        {isCard && <Icon name="ChevronDoubleLeftIcon" className="text-ctp-blue size-6" />}
-      </div>
-      {isCard && <div className="mt-1 z-0 border-b w-36 sm:w-45 h-1 border-ctp-blue rounded-xl"></div>}
-      {isCard && <div className="flex justify-center -mt-4 w-60 z-1">
-        <Icon name="EllipsisHorizontalIcon" className="size-8 bg-ctp-text text-ctp-blue before:block before:bg-ctp-base" />
-      </div>}
-      {isCard && <p className="text-ctp-base text-lg sm:text-xl font-normal font-roboto-flex text-center -mt-1 mx-2">{content}</p>}
-      </motion.div>}
-    </AnimatePresence>
+  return (
+    <>
+      <Swiper
+        pagination={{
+          type: 'fraction',
+        }}
+        effect={'cards'}
+        cardsEffect={{
+          slideShadows: false,
+        }}
+        grabCursor={true}
+        modules={[EffectCards]}
+        className="swiper w-84 flex h-145 rounded-xl"
+      >
+        {items.map((item) => {
+          return <SwiperSlide id="list-item" className="text-ctp-base">
+            <div className={`flex flex-col items-center
+                          ${image ? '' : 'justify-center'} w-64 sm:w-84 h-100 sm:h-132 bg-ctp-text
+                            border border-ctp-base rounded-xl`}>
+              {image && 
+              <div className="w-55 sm:w-72 h-40 sm:h-50 mt-5 ">
+                <img src={image} alt="image" className="object-cover w-55 sm:w-72 h-40 sm:h-50 rounded-xl" />
+              </div>}
+              <div className={`flex items-center ${isCard ? 'justify-between' : 'justify-center'} mt-2 w-60 sm:w-78 z-2`}>
+                {isCard && <Icon name="ChevronDoubleRightIcon" className="text-ctp-blue size-6" />}
+                  <h1 className="text-ctp-base text-center text-xl sm:text-2xl font-semibold font-roboto-flex ">{item.title}</h1>
+                {isCard && <Icon name="ChevronDoubleLeftIcon" className="text-ctp-blue size-6" />}
+              </div>
+              {isCard && <div className="mt-1 z-0 border-b w-36 sm:w-45 h-1 border-ctp-blue rounded-xl"></div>}
+              {isCard && <div className="flex justify-center -mt-4 w-60 z-1">
+                <Icon name="EllipsisHorizontalIcon" className="size-8 bg-ctp-text text-ctp-blue before:block before:bg-ctp-base" />
+              </div>}
+              {isCard  && <p className="text-ctp-base text-lg sm:text-xl font-normal font-roboto-flex text-center -mt-1 mx-2">{item.content}</p>}
+            </div>}
+          </SwiperSlide>;
+        })}
+      </Swiper>
+    </>
   );
 }

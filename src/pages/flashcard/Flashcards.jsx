@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { Flashcard } from "../../components/Flashcard.jsx";
 import { Icon } from "../../components/Icon.jsx";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 export function Flashcards() {
   const [query, setQuery] = useState('');
@@ -64,37 +69,9 @@ export function Flashcards() {
         <option value="physics">Physics</option>
       </select>
    </div>
-    <ul className="relative bg-ctp-green flex -mt-10 sm:mt-10 justify-center items-center">
-      <ShowCards items={items} query={query} category={cardCategory} />
-    </ul>
+      <div className="mt-30 sm:mt-20">
+        <Flashcard title="title" content="content" items={items} />
+      </div>
   </div>
   );
-}
-
-function ShowCards({items, query, category = 'all'}){
-  const [newList, setNewList] = useState(items);
-
-  useEffect(() => {
-    setNewList(filterList(items, query))
-
-  }, [query, category]);
-
-  function filterList(items, query){
-    query = query.toLowerCase();
-
-    const list = items.filter(item => {
-      let categoryCondition = category === 'all' ? true : item.category === category;
-
-      return item.title.toLowerCase().split(' ').some(word => 
-        word.toLowerCase().startsWith(query)) && categoryCondition;
-    })
-    return list;
-  }
-
-  return(
-    <>
-      {newList.map((item, index) => {
-        return <li key={item.id}><Flashcard title={item.title} content={item.content} index={index} isCard={true} image={item.image} /></li>
-      })}
-    </>);
 }
