@@ -14,14 +14,12 @@ export function CreateFlashcards({user}) {
   const [form, setForm] = useState("card");
 
   useEffect(() => {
-    console.log(imageCard)
 
     if (imageCard) {
       const reader = new FileReader();
 
       reader.onload = function(e) {
         setPreview(e.target.result);
-        console.log(e.target.result)
       }
 
       reader.readAsDataURL(imageCard);
@@ -33,7 +31,6 @@ export function CreateFlashcards({user}) {
   }, [imageCard])
  
   function handleFile(e) {
-    console.log(e.target.files)
     if(e.target.files && e.target.files.length > 0){
       setImageCard(e.target.files[0])
     }
@@ -67,11 +64,10 @@ export function CreateFlashcards({user}) {
 
     if(imageCard){
       imageUrl = await uploadImage(imageCard);
-      console.log(imageUrl);
     }
 
     const {error} = await supabase.from('flashcards').insert(
-      {title: title, content: content, image_path: imageUrl, isCard: isCard, user_id: user})
+      {title: title, content: content, image_path: imageUrl, isCard: isCard, user_id: user, category: category})
 
     if(error){
       console.log(error);
@@ -79,6 +75,11 @@ export function CreateFlashcards({user}) {
     }else {
       alert("Flashcard created")
     }
+  }
+
+  function handleSelectCategory(){
+    setSelectCategory(!selectCategory);
+    setCategory('Math');
   }
 
   function handleCategory(e) {
@@ -107,17 +108,24 @@ export function CreateFlashcards({user}) {
       <div className="min-h-screen flex flex-col items-center bg-ctp-base font-poppins">
         <h1 className=" text-ctp-text text-3xl font-semibold text-center mt-15 mb-10">Create Your Own Flashcards</h1>
         <select value={form} onChange={handleForm}
-          className="bg-ctp-text text-ctp-base p-1 rounded mr-60 sm:mr-82 mb-2">
+          className="bg-ctp-text text-ctp-base p-1 rounded cursor-pointer mr-60 sm:mr-82 mb-2">
           <option value="card">Card</option>    
           <option value="QnA">QnA</option>    
         </select>
         <form className="flex flex-col w-78 sm:w-100 text-ctp-text font-poppins">
         {form === "card" ? 
         (<>
-          <label forhtml="image">Image (optional)</label>
-          <input type="file" name="image" accept="image/*" onChange={handleFile}
-            className="bg-ctp-text text-ctp-base p-2 rounded" />
-          {preview !== null && <img src={preview} alt="" className="object-cover w-55 sm:w-72 h-40 sm:h-50 mx-auto mt-2 rounded-xl" />}
+            <div className="flex items-center justify-center mx-auto mt-5 w-55 sm:w-72">
+              <label forhtml="dropzone-file" className="flex flex-col items-center justify-center w-full h-40 sm:h-50 rounded-xl bg-neutral-secondary-medium border border-dashed border-default-strong rounded-base cursor-pointer hover:bg-neutral-tertiary-medium">
+                <div className="flex flex-col items-center justify-center text-body pt-5 pb-6">
+                  {preview !== null ? <img src={preview} alt="" className="object-cover w-55 sm:w-72 h-40 sm:h-50 mx-auto mt-2 rounded-xl" /> :
+                  <><p className="mb-2 text-sm text-center"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                  <p className="text-xs">Image or GIF</p>
+                     </> }
+                </div>
+              <input id="dropzone-file" type="file" name="image" accept="image/*, image/gif" onChange={handleFile} className="hidden" />
+              </label>
+            </div> 
           <label forhtml="title" className="text-ctp-text mt-2">Title</label>
           <input type="text" name="title" required value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter title..."
             className="p-2 bg-ctp-text text-ctp-base rounded focus:outline-none" />
@@ -135,7 +143,7 @@ export function CreateFlashcards({user}) {
             className="p-2 bg-ctp-text text-ctp-base rounded focus:outline-none"></textarea>
         </>)
           }
-          <button type="button" onClick={() => setSelectCategory(!selectCategory)}
+          <button type="button" onClick={handleSelectCategory}
             className="w-38 h-8 bg-ctp-text text-ctp-base rounded mt-3 hover:bg-ctp-lavender cursor-pointer">{selectCategory ? 'Remove category' : 'Select category'}</button>
           {selectCategory && <select onChange={handleCategory}
             className="bg-ctp-text p-1 text-ctp-base mt-3 rounded">

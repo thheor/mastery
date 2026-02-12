@@ -31,7 +31,7 @@ export function Flashcards({user}) {
       } else if(cardCategory === 'all'){
         category = true;
       } else {
-        category = element.category === cardCategory;
+        category = element.category.trim() === cardCategory;
       }
 
       return element.title.split(' ').some(word => 
